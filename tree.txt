@@ -1,0 +1,28 @@
+.
+├── README.md
+├── anpr-01.py
+├── datasets
+│   └── number-plates
+│       ├── 01.jpeg
+│       ├── 02.jpeg
+│       ├── 03.jpeg
+│       ├── 04.jpeg
+│       ├── 05.jpeg
+│       ├── 06.jpeg
+│       ├── 07.jpeg
+│       ├── 08.jpeg
+│       ├── 09.jpeg
+│       ├── 10.jpeg
+│       ├── 11.jpeg
+│       ├── 12.jpeg
+│       ├── 13.jpeg
+│       ├── 14.jpeg
+│       ├── 15.jpeg
+│       ├── 16.jpeg
+│       ├── 17.jpeg
+│       ├── 18.jpeg
+│       ├── 19.jpeg
+│       └── 20.jpeg
+└── tree.txt
+
+3 directories, 23 files
