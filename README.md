@@ -1,6 +1,6 @@
 # OpenCV-and-AI
 
-anpr-01.py works for the following images as follows:
+anpr-01.py works for the following images as follows:<br>.
 1.jpeg [Wrong Data, Easy to correct]
 2.jpeg [Number plate not detected]
 3.jpeg [Number plate not detected]
@@ -21,8 +21,3 @@ anpr-01.py works for the following images as follows:
 18.jpeg [Wrong Data, Hard to correct]
 19.jpeg [Perfect]
 20.jpeg [Perfect]
-
-
-
-
-
