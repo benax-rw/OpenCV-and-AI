@@ -1,9 +1,12 @@
 import cv2
 import pytesseract
 import imutils
+import sys
 
+image_arg_vector = sys.argv[1]
+print('datasets/number-plates/'+image_arg_vector)
 # Load image
-image = cv2.imread('datasets/number-plates/1.jpeg')
+image = cv2.imread('datasets/number-plates/'+image_arg_vector)
 
 # Resize image
 image = imutils.resize(image, width=500)
@@ -21,6 +24,7 @@ contours = imutils.grab_contours(contours)
 contours = sorted(contours, key=cv2.contourArea, reverse=True)[:10]
 
 # Detect number plate
+number_plate = None
 for contour in contours:
     perimeter = cv2.arcLength(contour, True)
     approx = cv2.approxPolyDP(contour, 0.02 * perimeter, True)
@@ -33,11 +37,16 @@ for contour in contours:
             number_plate = gray[y:y + h, x:x + w]
             break
 
-# Apply OCR
-text = pytesseract.image_to_string(number_plate, lang='eng',
-                                   config='--psm 11')
+if number_plate is not None:
+    # Apply OCR
+    text = pytesseract.image_to_string(number_plate, lang='eng',config='--psm 11')
 
-# Display results
-cv2.imshow('Number Plate', number_plate)
-print('Number Plate:', text.strip())
-cv2.waitKey(0)
+    # Display results
+    cv2.imshow('Number Plate', number_plate)
+    print('Number Plate:', text.strip())
+else:
+    print('Number plate not detected')
+    exit()
+    
+if cv2.waitKey(0) & 0xFF == ord("q"):
+    cv2.destroyAllWindows()
